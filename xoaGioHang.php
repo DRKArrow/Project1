@@ -1,0 +1,15 @@
+<?php
+session_start();
+if(isset($_GET["maSp"]))
+{
+	$maSp=$_GET["maSp"];
+	if(isset($_SESSION["gioHang"][$maSp]))
+	{
+		unset($_SESSION["gioHang"][$maSp]);	
+		header("Location:xemGioHang.php");	
+	}
+}else
+{
+	header("Location:xemGioHang.php");	
+}
+?>
